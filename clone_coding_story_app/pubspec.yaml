@@ -1,0 +1,40 @@
+name: clone_coding_story_app
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/
+
+    
+  fonts:
+    - family: SF-Pro-Text-Regular
+      fonts:
+        - asset: assets/SF-Pro-Text-Regular.otf
+
+    - family: SF-Pro-Text-Bold
+      fonts:
+        - asset: assets/SF-Pro-Text-Bold.otf
+
+    - family: Calibre-Semibold
+      fonts:
+        - asset: assets/Calibre Semibold.otf
+
+    - family: CustomIcons
+      fonts:
+        - asset: assets/custom_icons.ttf
+
+  uses-material-design: true
