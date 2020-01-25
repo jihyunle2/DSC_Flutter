@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'reusable_card.dart';
 
-const bottomContainerHeight = 60.0;
+const bottomContainerHeight = 80.0;
 const CardColour = Colors.grey;
 const bottomContainerColour = Colors.yellow;
 
@@ -37,10 +37,43 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
-            color: bottomContainerColour,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: bottomContainerHeight,
+            child: ReusableCard(
+              colour: CardColour,
+            ),
+          ),
+          Container(
+            child: ReusableCard(
+              colour: CardColour,
+            ),
+          ),
+          Container(
+            child: Text('+'),
+          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                color: bottomContainerColour,
+                margin: EdgeInsets.only(top: 10.0),
+                width: double.infinity,
+                height: bottomContainerHeight,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                      child: Text('1'),
+                    ),
+                    Expanded(
+                      child: Text('2'),
+                    ),
+                    Expanded(
+                      child: Text('3'),
+                    ),
+                  ],
+                )
+             ),
+            ),
           ),
         ],      
       ),
