@@ -28,11 +28,12 @@ class ReusableCard extends StatelessWidget{
               style: mainTextStyle,
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Text(
-              '+',
-              style: mainTextStyle,
+          FloatingActionButton(
+            onPressed: (){},
+            backgroundColor: Color(0xFF4C4F5E),
+            child: Icon(
+              Icons.add,
+              color: Colors.white
             ),
           ),
         ],
