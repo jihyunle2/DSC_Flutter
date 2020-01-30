@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ReusableCard extends StatelessWidget{
   ReusableCard({@required this.colour});
@@ -48,3 +49,35 @@ class ReusableCard extends StatelessWidget{
     );
   }
 }
+
+class RoundIconButton extends StatelessWidget{
+  
+  RoundIconButton({@required this.icon, @required this.onPressed});
+
+  final IconData icon;
+  final Function onPressed;
+
+  @override
+  Widget build(BuildContext context){
+    return RawMaterialButton(
+      child: Icon(icon),
+      onPressed: onPressed,
+      elevation: 6.0,
+      constraints: BoxConstraints.tightFor(
+        width: 50.0,
+        height: 50.0,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
+    );
+  }
+}
+
+RoundIconButton(
+  icon: FontAwesomeIcons.plus,
+  onPressed:(){
+    setState(() {
+      weight--;
+    });
+  }
+),
