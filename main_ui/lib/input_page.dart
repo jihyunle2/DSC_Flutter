@@ -24,11 +24,13 @@ class _InputPageState extends State<InputPage> {
       body: Container(
         child: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Container(
+                padding: EdgeInsets.only(left: 10.0),
                 margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.all(10.0),
                 child: Text(
+                  
                   '실수리스트',
                   style: TextStyle(
                     color: Colors.black,
@@ -55,32 +57,6 @@ class _InputPageState extends State<InputPage> {
               Container(
                 child: ReusableCard(
                   colour: CardColour,
-                ),
-              ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    color: bottomContainerColour,
-                    margin: EdgeInsets.only(top: 10.0),
-                    width: double.infinity,
-                    height: bottomContainerHeight,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Expanded(
-                          child: Text('1'),
-                        ),
-                        Expanded(
-                          child: Text('2'),
-                        ),
-                        Expanded(
-                          child: Text('3'),
-                        ),
-                      ],
-                    )
-                 ),
                 ),
               ),
             ],      

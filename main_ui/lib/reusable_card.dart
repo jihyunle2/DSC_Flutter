@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ReusableCard extends StatelessWidget{
+class ReusableCard extends StatefulWidget {
   ReusableCard({@required this.colour});
-
   final Color colour;
+
+  @override
+  _ReusableCardState createState() => _ReusableCardState();
+}
+
+class _ReusableCardState extends State<ReusableCard> {
   static const mainTextStyle = TextStyle(
     fontSize: 20.0,
   );
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,21 +34,21 @@ class ReusableCard extends StatelessWidget{
               style: mainTextStyle,
             ),
           ),
-          FloatingActionButton(
-            onPressed: (){},
-            backgroundColor: Color(0xFF4C4F5E),
-            child: Icon(
-              Icons.add,
-              color: Colors.white
-            ),
+          RoundIconButton(
+            onPressed:(){
+              setState(() {
+                //count++;
+              });
+            }
           ),
         ],
       ),
       margin: EdgeInsets.all(10.0),
-      height: 50.0,
-      padding: EdgeInsets.all(15.0),
+      height: 70.0,
+      padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
       decoration: BoxDecoration(
-        color: colour,
+        color: Colors.black,
+        //color: colour,
         borderRadius: BorderRadius.circular(10.0),
       ),
     );
@@ -52,32 +57,24 @@ class ReusableCard extends StatelessWidget{
 
 class RoundIconButton extends StatelessWidget{
   
-  RoundIconButton({@required this.icon, @required this.onPressed});
+  RoundIconButton({@required this.onPressed});
 
-  final IconData icon;
   final Function onPressed;
 
   @override
   Widget build(BuildContext context){
     return RawMaterialButton(
-      child: Icon(icon),
+      child: Icon(FontAwesomeIcons.plus,),
       onPressed: onPressed,
-      elevation: 6.0,
+      elevation: 3.0,
       constraints: BoxConstraints.tightFor(
-        width: 50.0,
-        height: 50.0,
+        width: 30.0,
+        height: 30.0,
       ),
       shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
+      fillColor: Color.fromRGBO(128, 128, 128, 0),
     );
   }
 }
 
-RoundIconButton(
-  icon: FontAwesomeIcons.plus,
-  onPressed:(){
-    setState(() {
-      weight--;
-    });
-  }
-),
+
